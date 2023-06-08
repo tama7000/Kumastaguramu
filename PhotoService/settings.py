@@ -11,19 +11,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-ml9g$acamw93(m4)#a(fv35r)wr48kf*zidm9j!#q7^)i1gytv'
+SECRET_KEY = 'django-insecure-ml9g$acamw93(m4)#a(fv35r)wr48kf*zidm9j!#q7^)i1gytv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '.pythonanywhere.com', 'kumachi3.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
+
 # Application definition
-
-from django.core.management.utils import get_random_secret_key
-SECRET_KEY = get_random_secret_key() 
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -33,7 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
-    
+    'django_cleanup',
 ]
 
 MIDDLEWARE = [
@@ -113,10 +109,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATICFILES_DIRS = (
-    #os.path.join(BASE_DIR),
-#)
-STATIC_ROOT = os.path.join(BASE_DIR,"static")
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR,"static"),
+)
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
