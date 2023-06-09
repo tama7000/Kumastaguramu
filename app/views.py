@@ -37,9 +37,9 @@ def signup(request):
             if new_user is not None:
                 login(request,new_user)
                 return redirect('app:users_detail', pk=new_user.pk)
-        else:
-          form = UserCreationForm()
-        return render(request, 'app/signup.html', {'form': form})
+    else:
+      form = UserCreationForm()
+    return render(request, 'app/signup.html', {'form': form})
  
     
 @login_required 
