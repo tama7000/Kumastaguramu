@@ -11,8 +11,9 @@
                 {{ photo.category }} 
             </a> 
              
-            <a href="{% url 'app:users_detail' photo.user.id %}">@{{ photo.user 
-        }}</a> 
+            <a href="{% url 'app:users_detail' photo.user.id %}">
+              @{{ photo.user }}
+            </a> 
             </div> 
         </div> 
         {% endfor %} 

@@ -17,7 +17,6 @@
 
 {% include 'app/photos_list.html' %}
 
-{{ user.is_superuser }} <!-- 管理者の場合は True --> 
 
 <!-- ユーザーの持つ権限によって表⽰を切り替え --> 
 {% if user.is_superuser %} 
