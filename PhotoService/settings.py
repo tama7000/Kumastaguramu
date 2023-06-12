@@ -21,7 +21,7 @@ SECRET_KEY = get_random_secret_key()
 
 
 #DEBUG = True
-EBUG = False
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
