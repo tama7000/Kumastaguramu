@@ -18,12 +18,7 @@
 {% include 'app/photos_list.html' %}
 
 
-<!-- ユーザーの持つ権限によって表⽰を切り替え --> 
-{% if user.is_superuser %} 
-  <p>管理者</p> 
-{% else %} 
-  <p>⼀般ユーザー</p> 
-{% endif %} 
+
 </div>
 
 {% endblock %} 
