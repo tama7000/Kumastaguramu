@@ -30,6 +30,7 @@ header .container{
 body > .container {
     width: 65%;
     padding-top: 60px;
+    
 }
 
 header h1{
@@ -102,3 +103,5 @@ header h1{
     padding-left: 30px;
     border-radius: 4px;
 }
+
+
