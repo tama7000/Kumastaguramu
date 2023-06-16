@@ -1,22 +1,31 @@
+
 <div class="photo-container"> 
+  
     {% for photo in photos %} 
       <div class="photo"> 
-        <a href="{% url 'app:photos_detail' photo.id %}"> 
+        
+          <a href="{% url 'app:photos_detail' photo.id %}"> 
           <img src="{{ photo.image.url }}" class="photo-img"> 
-        </a> 
-        <div class="photo-info"> 
+          </a> 
+          <div class="photo-info"> 
 
-            <a href="{% url 'app:photos_category' category=photo.category %}" 
-        class="category" button type="button" class="btn btn-outline-secondary"> 
+              <a href="{% url 'app:photos_category' category=photo.category %}" class="category" button type="button" class="btn btn-outline-secondary"> 
                 {{ photo.category }} 
-            </a> 
+              </a> 
              
-            <a href="{% url 'app:users_detail' photo.user.id %}" button type="button" class="btn btn-outline-secondary">
-              @{{ photo.user }}
-            </a> 
-            </div> 
-        </div> 
-        {% endfor %} 
-        </div>
+              <a href="{% url 'app:users_detail' photo.user.id %}" button type="button" class="btn btn-outline-secondary">
+                @{{ photo.user }}
+              </a> 
+
+          </div>
+        
+      </div> 
+    {% endfor %} 
+  
+</div>
+
+
+
+
 
         
