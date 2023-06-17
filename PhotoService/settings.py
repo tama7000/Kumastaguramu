@@ -24,7 +24,6 @@ SECRET_KEY = get_random_secret_key()
 DEBUG = False
 
 #ALLOWED_HOSTS = []
-
 ALLOWED_HOSTS = ['kumachi3.pythonanywhere.com']
 
 
