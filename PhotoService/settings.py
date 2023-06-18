@@ -20,11 +20,11 @@ from django.core.management.utils import get_random_secret_key
 SECRET_KEY = get_random_secret_key()  
 
 
-DEBUG = True
-#DEBUG = False
+#DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-#ALLOWED_HOSTS = ['kumachi3.pythonanywhere.com']
+#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kumachi3.pythonanywhere.com']
 
 
 # Application definition
