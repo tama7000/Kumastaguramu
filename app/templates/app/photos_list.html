@@ -1,10 +1,26 @@
+{% load static %}
+
+<head>
+
+  
+  <link rel="stylesheet" type="text/css" 
+  href="{% static 'css/style2.css'%}"> 
+ 
+  
+  <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+  <!-- ScrollOutのCDN -->
+
+</head>
+
+
 
 
 <div class="container"> 
+  
  
     {% for photo in photos %} 
    
-      <div class="photo"> 
+      <div class="photo" data-scroll> 
         
           <a href="{% url 'app:photos_detail' photo.id %}"> 
           <img src="{{ photo.image.url }}" class="photo-img"> 
@@ -24,8 +40,48 @@
       </div> 
     {% endfor %} 
   
-  
+ 
 </div>
 
 
-        
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django ScrollOut Implementation</title>
+    <style>
+        body {
+            background: #222;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        [data-scroll] {
+            background-color: lightgray;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 5px;
+            width: calc(33.333% - 20px);
+            height: 250px;
+            margin: 10px;
+            will-change: transform;
+            opacity: 1;
+            opacity: calc(var(--visible-y) * var(--visible-y));
+            transform: scale(calc(0.5 + calc(var(--visible-y) * 0.5)));
+        }
+      </style>
+</head>
+<body>
+<div class="container">
+    <!-- The photos will be dynamically added here -->
+</div>
+
+<script src="{% static 'css/script.js' %}"></script>
+</body>
+</html>
