@@ -11,18 +11,12 @@ a{
   color: #000; 
 } 
  
-.container { 
-  width: 80%; 
-  margin: auto; 
-  overflow: auto; 
-} 
+
  
 header { 
   border-bottom: solid 1px #000; 
   height: 70px; 
 } 
-
-
 
 
  
@@ -31,10 +25,7 @@ header .container {
   justify-content: space-between; 
 } 
  
-body > .container { 
-  width: 65%; 
-  padding-top: 60px; 
-} 
+
  
 header h1 { 
   margin: 0; 
@@ -55,7 +46,7 @@ header h1 {
 .photo { 
   width: calc(100%/3); 
   float: left; 
-  padding: 10px; 
+  padding: 0px; 
   margin-bottom: 15px; 
 } 
  
@@ -87,7 +78,7 @@ header h1 {
 .photo-img { 
   width: 100%; 
   max-width: 500px; 
-  height: 300px; 
+  height: 500px; 
   object-fit: cover; 
   border-radius: 4px; 
 } 
