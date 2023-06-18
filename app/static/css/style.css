@@ -102,3 +102,27 @@ header h1 {
   border-radius: 4px; 
 } 
 
+body {
+  background: #222;
+  -webkit-overflow-scrolling: touch;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+[data-scroll] {
+  background-color: lightgray;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  width: calc(33.333% - 20px);
+  height: 250px;
+  margin: 10px;
+  will-change: transform;
+  opacity: 1;
+  opacity: calc(var(--visible-y) * var(--visible-y));
+  transform: scale(calc(0.5 + calc(var(--visible-y) * 0.5)));
+}
