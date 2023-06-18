@@ -1,45 +1,6 @@
 
 
 <div class="container"> 
-  <div class="slideshow">
-    {% for photo in photos %} 
-   
-      <div class="photo"> 
-          <img src="{{ photo.image.url }}" class="photo-img"> 
-      </div> 
-
-    {% endfor %} 
-  </div>
-  
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-  var slideshow = document.querySelector(".slideshow");
-  var images = Array.from(slideshow.getElementsByTagName("img"));
-  var currentIndex = 0;
-
-  function showImage(index) {
-    images.forEach(function(image) {
-      image.classList.remove("active");
-    });
-    images[index].classList.add("active");
-  }
-
-  function startSlideshow() {
-    setInterval(function() {
-      currentIndex = (currentIndex + 1) % images.length;
-      showImage(currentIndex);
-    }, 3000);
-  }
-
-  startSlideshow();
-  });
-</script>
-
-
-
-<div class="container"> 
  
     {% for photo in photos %} 
    
