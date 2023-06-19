@@ -14,6 +14,11 @@ urlpatterns = [
     name='photos_delete' 
     ), 
 
+    path( 
+        'photos/<str:category>/', 
+        views.photos_category, 
+        name='photos_category' 
+        ), 
  
     
     path(
@@ -24,3 +29,4 @@ urlpatterns = [
     path('logout/',auth_views.LogoutView.as_view(),name='logout'),
 ]
 
+    
