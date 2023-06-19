@@ -42,7 +42,20 @@ header h1 {
   padding: 10px; 
   margin-left: 10px; 
 } 
- 
+
+
+@keyframes scrollOut {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+.scroll-out {
+  animation: scrollOut 0.5s;
+}
 
 
 
