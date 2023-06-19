@@ -1,0 +1,20 @@
+<h2>Add Comment</h2>
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label for="text">Comment:</label>
+    <textarea name="text" id="text" rows="4" cols="50"></textarea>
+  </div>
+  <div>
+    <label for="reply_to">Reply to:</label>
+    <select name="reply_to" id="reply_to">
+      <option value="">Select a comment to reply to</option>
+      {% for comment in comments %}
+        <option value="{{ comment.id }}">{{ comment.text }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div>
+    <input type="submit" value="Post Comment">
+  </div>
+</form>
