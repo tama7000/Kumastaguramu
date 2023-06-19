@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import PhotoForm
 from django.contrib import messages
 from django.views.decorators.http import require_POST
-from .models import Photo, Category
+
 
 
 
@@ -71,14 +71,7 @@ def photos_delete(request, pk):
 
 
 
-def photos_category(request, category): 
-  
-  category = get_object_or_404(Category, title=category) 
-  
-  photos = Photo.objects.filter(category=category).order_by('-created_at') 
-  return render( 
-    request, 'app/index.html', {'photos': photos, 'category': category} 
-  ) 
+
 
 
 
