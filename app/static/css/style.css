@@ -1,14 +1,8 @@
-html, body { 
-  margin: 0; 
-} 
- 
-div { 
-  box-sizing: border-box; 
-} 
+
  
 a{ 
   text-decoration: none; 
-  color: #000; 
+  color: hsl(90, 20%, 98%); 
 } 
  
 
@@ -44,18 +38,7 @@ header h1 {
 } 
 
 
-@keyframes scrollOut {
-  0% {
-    visibility: hidden;
-  }
-  100% {
-    visibility: visible;
-  }
-}
 
-.scroll-out {
-  animation: scrollOut 0.5s;
-}
 
 
 
