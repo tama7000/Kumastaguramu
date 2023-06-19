@@ -48,7 +48,14 @@ header h1 {
   display: block; 
 } 
 
-
+.photo-info .category { 
+  display: inline-block; 
+  padding: 2px 5px; 
+  border-radius: 4px; 
+  font-size: 12px; 
+  color: #fff; 
+  background-color: #000; 
+} 
 
 
 

@@ -42,7 +42,7 @@ def signup(request):
     else:
       form = UserCreationForm()
     return render(request, 'app/signup.html', {'form': form})
- 
+
     
 @login_required 
 def photos_new(request): 
@@ -69,10 +69,12 @@ def photos_delete(request, pk):
   photo.delete() 
   return redirect('app:users_detail', request.user.id) 
 
+
+
 def photos_category(request, category): 
-  # titleがURLの⽂字列と⼀致するCategoryインスタンスを取得 
+  
   category = get_object_or_404(Category, title=category) 
-  # 取得したCategoryに属するPhoto⼀覧を取得 
+  
   photos = Photo.objects.filter(category=category).order_by('-created_at') 
   return render( 
     request, 'app/index.html', {'photos': photos, 'category': category} 
