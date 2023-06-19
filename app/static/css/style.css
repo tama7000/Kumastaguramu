@@ -38,7 +38,17 @@ header h1 {
 } 
 
 
-
+.photo { 
+  width: calc(100%/3); 
+  float: left; 
+  padding: 10px; 
+  margin-bottom: 15px; 
+} 
+ 
+.photo a { 
+  display: block; 
+} 
+ 
 
 
 
