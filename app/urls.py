@@ -28,8 +28,7 @@ urlpatterns = [
     ),
     path('logout/',auth_views.LogoutView.as_view(),name='logout'),
 
-    #コメント機能
-    path('photos/<int:photo_id>/comments/add/', views.add_comment, name='add_comment'),
+   
     
 ]
 

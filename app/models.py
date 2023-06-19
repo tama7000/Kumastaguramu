@@ -20,13 +20,7 @@ class Photo(models.Model):
         return self.title
 
 
-#コメント機能
-class Comment(models.Model):
-    text = models.TextField()
-    photo = models.ForeignKey(Photo, on_delete=models.CASCADE, related_name='comments')
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    reply_to = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, related_name='replies')
-    created_at = models.DateTimeField(auto_now_add=True)
+
 
    
 

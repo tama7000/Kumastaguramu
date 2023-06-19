@@ -8,8 +8,7 @@ from .forms import PhotoForm
 from django.contrib import messages
 from django.views.decorators.http import require_POST
 from .models import Photo, Category
-from .models import Comment
-from django.shortcuts import render, get_object_or_404, redirect
+
 
 def index(request):
     return render(request,'app/index.html')
@@ -80,17 +79,3 @@ def photos_category(request, category):
   ) 
 
 
-#コメント機能
-def add_comment(request, photo_id):
-    photo = get_object_or_404(Photo, pk=photo_id)
-    if request.method == 'POST':
-        text = request.POST.get('text')
-        user = request.user
-        reply_to_id = request.POST.get('reply_to')
-        if reply_to_id:
-            reply_to = get_object_or_404(Comment, pk=reply_to_id)
-            comment = Comment.objects.create(text=text, photo=photo, user=user, reply_to=reply_to)
-        else:
-            comment = Comment.objects.create(text=text, photo=photo, user=user)
-        return redirect('photo_detail', photo_id=photo_id)
-    return render(request, 'add_comment.html', {'photo': photo})
