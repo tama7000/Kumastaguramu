@@ -10,37 +10,7 @@
   <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
   <!-- ScrollOutのCDN -->
 
-</head>
-
-
-
-
-<div class="container"> 
-  <div class="scroll-out"></div>
-  
- 
-    {% for photo in photos %} 
-   
-      <div class="photo" data-scroll> 
-        
-          <a href="{% url 'app:photos_detail' photo.id %}"> 
-          <img src="{{ photo.image.url }}" class="photo-img"> 
-          </a> 
-          
-        
-      </div> 
-    {% endfor %} 
-  
-  </div>
-</div>
-
-
-{% load static %}
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Django ScrollOut Implementation</title>
+  <title>Django PhotoService</title>
     <style>
         body {
             background: #222;
@@ -51,7 +21,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            width: 200%; 
+            width: 150%; 
         }
 
         [data-scroll] {
@@ -70,12 +40,32 @@
         
       </style>
 </head>
-<body>
-<div class="container">
-    <!-- The photos will be dynamically added here -->
+
+
+
+
+<div class="container"> 
+  <div class="scroll-out">
+  
+ 
+    {% for photo in photos %} 
+   
+      <div class="photo" data-scroll> 
+        
+          <a href="{% url 'app:photos_detail' photo.id %}"> 
+          <img src="{{ photo.image.url }}" class="photo-img"> 
+          </a> 
+          
+        
+      </div> 
+    {% endfor %} 
+  
+  </div>
 </div>
 
 
+
+<body>
 
 <script>
 ScrollOut({ 
@@ -86,5 +76,5 @@ ScrollOut({
 
 })
 </script>
+
 </body>
-</html>
