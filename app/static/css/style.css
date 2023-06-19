@@ -49,6 +49,32 @@ header h1 {
 } 
 
 
+body {
+  background: #222;
+  -webkit-overflow-scrolling: touch;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 150%; 
+}
+
+[data-scroll] {
+  background-color: #222;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  width: calc(33.3% - 20px);
+  height:auto;
+  margin: 10px;
+  will-change: transform;
+  opacity: 1;
+  opacity: calc(var(--visible-y) * var(--visible-y));
+  transform: scale(calc(0.5 + calc(var(--visible-y) * 0.5)));
+}
+
 
 
 
