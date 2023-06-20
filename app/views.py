@@ -9,7 +9,9 @@ from django.contrib import messages
 from django.views.decorators.http import require_POST
 from .models import Photo, Category
 
-
+from PIL import Image
+import io
+import requests
 
 
 
@@ -82,5 +84,22 @@ def photos_category(request, category):
   ) 
 
 
+def dog_image_view(request):
+    url = "https://dog.ceo/api/breeds/image/random"
 
+    # APIを実行
+    response = requests.get(url)
+
+    # 返ってきたJSONを処理
+    json_data = response.json()
+    image_url = json_data['message']
+
+    # 画像URLから画像を取得
+    image = Image.open(io.BytesIO(requests.get(image_url).content))
+
+    context = {
+        'image': image,
+    }
+
+    return render(request, 'dog_image.html', context)
 
