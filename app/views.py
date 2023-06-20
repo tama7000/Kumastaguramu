@@ -10,6 +10,28 @@ from django.views.decorators.http import require_POST
 from .models import Photo, Category
 
 
+from django.shortcuts import render
+import requests
+from PIL import Image
+import io
+
+def dog_image(request):
+    url = "https://dog.ceo/api/breeds/image/random"
+
+    # (1)APIを実行
+    response = requests.get(url)
+
+    # (2) 返ってきたJSONを処理
+    json_data = response.json()
+    image_url = json_data['message']
+    str_image_url = str(image_url)
+
+    # (3) 画像URLから画像表示
+    file = io.BytesIO(requests.get(str_image_url).content)
+    img = Image.open(file)
+
+    return render(request, 'photos_new.html', {'image': img})
+
 
 
 
