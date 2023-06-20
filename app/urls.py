@@ -2,7 +2,11 @@ from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
 
+
+
 app_name = 'app'
+
+
 urlpatterns = [
     path('', views.index, name='index'),
     path('users/<int:pk>/', views.users_detail, name='users_detail'),
@@ -28,8 +32,10 @@ urlpatterns = [
     ),
     path('logout/',auth_views.LogoutView.as_view(),name='logout'),
 
-   
     
 ]
+
+
+
 
     

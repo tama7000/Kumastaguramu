@@ -7,9 +7,15 @@
 {% endif %} 
  
 {% include 'app/photos_list.html' %} 
- 
+
+
+<h2>Latest Photos</h2>
+<ul>
+  {% for photo in photos %}
+  <li>
+    <p>{{ photo.title }}</p>
+  </li>
+  {% endfor %}
+</ul>
 {% endblock %} 
-
-
-  
   

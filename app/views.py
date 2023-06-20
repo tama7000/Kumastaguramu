@@ -10,6 +10,9 @@ from django.views.decorators.http import require_POST
 from .models import Photo, Category
 
 
+
+
+
 def index(request):
     return render(request,'app/index.html')
 
@@ -77,5 +80,7 @@ def photos_category(request, category):
   return render( 
     request, 'app/index.html', {'photos': photos, 'category': category} 
   ) 
+
+
 
 
