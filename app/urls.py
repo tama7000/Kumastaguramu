@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
-from app.views import dog_image
+
 
 
 app_name = 'app'
@@ -32,7 +32,7 @@ urlpatterns = [
     ),
     path('logout/',auth_views.LogoutView.as_view(),name='logout'),
 
-    path('photos_new.html/', dog_image, name='dog_image'),
+   
 ]
 
 
