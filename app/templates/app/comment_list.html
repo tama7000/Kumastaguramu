@@ -1,0 +1,12 @@
+{% extends 'app/photos_detail.html' %}
+
+{% block content %}
+
+<div class="comment-section">
+    <h2>コメント</h2>
+    {% for comment in comments %}
+      <p>{{ comment.text }}</p>
+    {% endfor %}
+  </div>
+
+{% endblock %}

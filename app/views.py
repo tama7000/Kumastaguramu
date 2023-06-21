@@ -9,6 +9,9 @@ from django.contrib import messages
 from django.views.decorators.http import require_POST
 from .models import Photo, Category
 
+from django.shortcuts import render, redirect
+from .forms import CommentForm
+from .models import Comment
 
 
 
@@ -84,4 +87,21 @@ def photos_category(request, category):
 
 
 
+
+def create_comment(request):
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            form.save()  # コメントを保存する
+            return redirect('comment_list')  # ビューやパターン名を表す
+    else:
+        form = CommentForm()
+    
+    return render(request, 'app/create_comment.html', {'form': form})
+
+
+
+def comment_list(request):
+    comments = Comment.objects.all()
+    return render(request, 'app/comment_list.html', {'comments': comments})
 

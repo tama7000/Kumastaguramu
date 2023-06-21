@@ -1,0 +1,5 @@
+<form method="post" action="{% url 'app:comment_list' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">コメントを投稿する</button>
+  </form>

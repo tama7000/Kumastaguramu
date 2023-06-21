@@ -32,8 +32,11 @@ urlpatterns = [
     ),
     path('logout/',auth_views.LogoutView.as_view(),name='logout'),
 
+    path('create_comment/', views.create_comment, name='create_comment'),  # コメント作成ビューへのURL
+    path('comment_list/', views.comment_list, name='comment_list'),
    
 ]
+
 
 
 

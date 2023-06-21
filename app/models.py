@@ -21,8 +21,12 @@ class Photo(models.Model):
         return self.title
 
 class Comment(models.Model):
-    text = models.TextField('記述')
+    text = models.TextField('コメント記入欄')
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.text
+    
  
  
 
