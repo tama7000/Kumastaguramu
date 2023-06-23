@@ -139,4 +139,5 @@ LOGOUT_REDIRECT_URL = 'app:index'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+SESSION_COOKIE_AGE = 86400
+SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
