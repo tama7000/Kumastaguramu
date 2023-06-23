@@ -20,13 +20,13 @@ from django.core.management.utils import get_random_secret_key
 SECRET_KEY = get_random_secret_key()  
 
 
-#DEBUG = True
+DEBUG = True
 
-DEBUG = False
+#DEBUG = False
 
-#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
-ALLOWED_HOSTS = ['kumachi3.pythonanywhere.com']
+#ALLOWED_HOSTS = ['kumachi3.pythonanywhere.com']
 
 
 # Application definition
@@ -139,11 +139,6 @@ LOGOUT_REDIRECT_URL = 'app:index'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_SSL_REDIRECT = False
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
 
-SESSION_COOKIE_AGE = 86400
-SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
+
 
