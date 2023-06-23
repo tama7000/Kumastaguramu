@@ -4,3 +4,4 @@ local_settings.py
 /static
 myvenv
 __pycache__
+settings_secret.py

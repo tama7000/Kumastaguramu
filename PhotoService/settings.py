@@ -3,6 +3,8 @@
 from pathlib import Path
 import os
 
+from .settings_secret import *
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -13,20 +15,23 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
 
-from django.core.management.utils import get_random_secret_key
-SECRET_KEY = get_random_secret_key()  
+
+SECRET_KEY = 'django-insecure-ml9g$acamw93(m4)#a(fv35r)wr48kf*zidm9j!#q7^)i1gytv'
+
+#from django.core.management.utils import get_random_secret_key
+#SECRET_KEY = get_random_secret_key()  
 
 
-DEBUG = True
+#DEBUG = True
 
-#DEBUG = False
+DEBUG = False
 
 #ALLOWED_HOSTS = []
 
 ALLOWED_HOSTS = ['kumachi3.pythonanywhere.com']
+
 
 
 # Application definition
