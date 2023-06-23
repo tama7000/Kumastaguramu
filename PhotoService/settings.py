@@ -18,10 +18,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-SECRET_KEY = 'django-insecure-ml9g$acamw93(m4)#a(fv35r)wr48kf*zidm9j!#q7^)i1gytv'
 
-#from django.core.management.utils import get_random_secret_key
-#SECRET_KEY = get_random_secret_key()  
+
+from django.core.management.utils import get_random_secret_key
+SECRET_KEY = get_random_secret_key()  
 
 
 #DEBUG = True
